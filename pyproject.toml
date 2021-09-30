@@ -11,6 +11,9 @@ repository = "https://github.com/Kornelijus/lit-data"
 [tool.poetry.dependencies]
 python = "^3.9"
 beautifulsoup4 = "^4.9.3"
+requests = "^2.26.0"
+vcrpy = "^4.1.1"
+responses = "^0.14.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
