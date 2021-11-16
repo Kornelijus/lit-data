@@ -27,6 +27,10 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
-line-length = 88
+line-length = 120
 target-version = ["py39"]
 include = '\.pyi?$'
+
+# Maybe in a few decades flake8 will support PEP 518
+[tool.flake8]
+max-line-length = 120
