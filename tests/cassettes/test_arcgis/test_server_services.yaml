@@ -1,0 +1,61 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/95.0.4638.69 Safari/537.36
+    method: GET
+    uri: https://sampleserver6.arcgisonline.com/arcgis/rest/services?f=json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAJ1W30/bMBD+X/JcTc32gOAtTWlBKtDhAtomFBnnSG84drAdUIT433eGsoniNB5P
+        BPf7cb5cPvspEa0xoNwlGItaJQfp+MteOkputSxpKTn4lWTzZTJKDiU8cOch9KzAVB09LLTgcq4f
+        wKiaRDYrThNxlJyCe9TmLlNcdhb9ytmNxPsW/JPVC65KK7H0/zKBRMdbFFPuuF9ovNcK6kYbLrOq
+        MlC9uTPS70544xVZpwT9uXAo0SHY5HqUWDAPKMDX/pQoXkNykOynac6ltEfa2Ub7Ql3X+B/mS0Zw
+        MMnzaBhMph/ROSjb2iHQmhupnYNFxv5Bj2teQQCs6xqMQC6n3CMya8HaTYM31Blw15pPksMlErFV
+        6LqsLA1RUFWRdr2soM8n9vSfO9mGM8cdLCVX8AmvEDnoesiNW9+3/A5swVAJSPf3xhGGA7ywF73i
+        CpToZly8TX6E0y5W0Gc+nWyCwe7+ZI4oRVBQk4YUT7wxN11EuR+hYUWtXKVpa933lloJZrAEN+Gy
+        7IoJt0CAIXQrHU6RRsG3gcuC8bqRQ8NwyhufQlICW4N8X1TvhneRwi6LfOpjNPcJ/HU8Tgej5VS7
+        qFHZwoXdf6yoLbYgdyzT/ZzaaYsLlutWRYzWGUrmT4Cl0b9BuAmxSm7iBjmCG/RcrrWCYyXo0FEu
+        xqiPEFbXWi7B1BgnHUKHdQ0IbOhT2Jx/u7DnIAxsAXtLCIF7VEvp+/03QC5hjUJGvasIbtgTacFm
+        Suntjfdb9VKCDq8f8pU2ssxjwpC93ivOga4wNubY6iOE1Wff0jRG9D0uqLXShkJRD6bBBcsGlCj9
+        HeW6XKCKets9+LA2wqNdQ7n7ZLmi49cUm7vkS2YXw6H9jhRRdg8+rI2yvEUTc5f4CO1RVOWqNTcR
+        PXuZ1oI5A+Bi+uDhPqV/6j7t6+c/XTGDJgQMAAA=
+    headers:
+      Cache-Control:
+      - max-age=0,must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '713'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 17 Nov 2021 12:42:23 GMT
+      Server:
+      - ''
+      Set-Cookie:
+      - AWSALB=dj5XfuYIkh0XtQ7XtFBgNXsIr7omDC8bu4+C6F32z8uxtiNTLdmm2wbozNkEJEP2xQu2sVR7h5ZycBX25l5w2BMhmSlDxL6rbdPPeuSNOuyjuPFoazw4b0aK0zPM;
+        Expires=Wed, 24 Nov 2021 12:42:23 GMT; Path=/
+      - AWSALBCORS=dj5XfuYIkh0XtQ7XtFBgNXsIr7omDC8bu4+C6F32z8uxtiNTLdmm2wbozNkEJEP2xQu2sVR7h5ZycBX25l5w2BMhmSlDxL6rbdPPeuSNOuyjuPFoazw4b0aK0zPM;
+        Expires=Wed, 24 Nov 2021 12:42:23 GMT; Path=/; SameSite=None; Secure
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

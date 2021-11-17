@@ -17,7 +17,7 @@ class ArcObject:
     def __init__(self, url: str, headers=HEADERS, params=PARAMS):
         self._headers = headers
         self._params = params
-        self._url: str = urljoin(url, urlparse(url).path)  # removes url query parameters
+        self._url: str = urljoin(url, urlparse(url).path).strip("/")  # removes url query parameters
         self._data: dict = {}
 
     @property
@@ -43,26 +43,46 @@ class ArcDirectory(ArcObject):
     def __init__(self, url: str):
         super().__init__(url)
 
-        self._folders: dict[str, ArcFolder] = {}
-        self._services: dict[str, ArcService] = {}
+        self._folders: list[ArcFolder] = []
+        self._services: list[ArcService] = []
 
-    def folders(self, name: str = None) -> dict[str, ArcFolder] | ArcFolder:
+    def folders(self, name: str = None) -> list[ArcFolder] | ArcFolder:
+        if not self.data:
+            self.get()
+
         if not self._folders:
             for name_ in self.data.get("folders", []):
-                self._folders[name_] = ArcFolder(urljoin(self.url, name_), name_)
+                self._folders.append(ArcFolder(urljoin(self.url, name_), name_))
 
         if name is not None:
-            return self._folders[name]
+            for folder in self._folders:
+                if folder.name == name:
+                    return folder
+            raise ValueError(f"Folder {name} not found")
         else:
             return self._folders
 
-    def services(self, name: str = None) -> dict[str, ArcService] | ArcService:
+    def services(self, name: str = None, service_type: ArcServiceType = None) -> list[ArcService] | ArcService:
+        if not self.data:
+            self.get()
+
         if not self._services:
             for service in self.data.get("services", []):
-                self._services[service["name"]] = ArcService.from_dict(service)
+                # To support older versions of ArcGIS with no url provided
+                if not service.get("url"):
+                    service["url"] = "/".join([self.url, service["name"], service["type"]])
+
+                self._services.append(ArcService.from_dict(service))
 
         if name is not None:
-            return self._services[name]
+            for service in self._services:
+                if service.name == name:
+                    if service_type is not None:
+                        if service.service_type == service_type:
+                            return service
+                    else:
+                        return service
+            raise ValueError(f"Service {name} not found")
         else:
             return self._services
 
@@ -81,6 +101,9 @@ class ArcFolder(ArcDirectory):
     def __str__(self):
         return self.name
 
+    def __repr__(self) -> str:
+        return f"ArcFolder({self.name})"
+
 
 class ArcService(ArcObject):
     def __init__(self, url: str, name: str, type: ArcServiceType):
@@ -90,15 +113,12 @@ class ArcService(ArcObject):
         self._layers: dict[str, ArcLayer] = {}
         self._tables: dict[str, ArcTable] = {}
 
-        if self.service_type != ArcServiceType.FEATURE_SERVER:
-            raise NotImplementedError("Only feature services are supported")
-
     @property
     def name(self):
         return self._name
 
     @property
-    def service_type(self):
+    def service_type(self) -> ArcServiceType:
         return self._service_type
 
     @classmethod
@@ -111,11 +131,14 @@ class ArcService(ArcObject):
         return cls(url, path[-2], ArcServiceType(path[-1]))
 
     def layers(self, id: int = None) -> dict[str, ArcLayer] | ArcLayer:
+        if self.service_type != ArcServiceType.FEATURE_SERVER:
+            raise NotImplementedError("Only feature services are supported")
+
         if not self.data:
             self.get()
 
         if not self._layers:
-            for layer in self.data.get("layers"):
+            for layer in self.data.get("layers", []):
                 self._layers[layer["id"]] = ArcLayer.from_dict(self.url, layer)
 
         if id is not None:
@@ -124,11 +147,14 @@ class ArcService(ArcObject):
             return self._layers
 
     def tables(self, id: int = None) -> dict[str, ArcTable] | ArcTable:
+        if self.service_type != ArcServiceType.FEATURE_SERVER:
+            raise NotImplementedError("Only feature services are supported")
+
         if not self.data:
             self.get()
 
         if not self._tables:
-            for table in self.data.get("tables"):
+            for table in self.data.get("tables", []):
                 self._tables[table["id"]] = ArcTable.from_dict(self.url, table)
 
         if id is not None:
@@ -338,27 +364,13 @@ class ArcServiceType(str, Enum):
     ArcGIS service types
     """
 
-    MAP_SERVER = "MapServer"
     FEATURE_SERVER = "FeatureServer"
-    GEODATABASE = "GeoDatabase"
-    GEOCODING = "Geocoding"
-    GEOMETRY_SERVER = "GeometryServer"
+    MAP_SERVER = "MapServer"
     IMAGE_SERVER = "ImageServer"
-    TILE_SERVER = "TileServer"
-    GEOPROCESSING = "Geoprocessing"
-    GEODATA_ACCESS = "GeodataAccess"
+    GLOBE_SERVER = "GlobeServer"
+    GP_SERVER = "GPServer"
     GEOCODE_SERVER = "GeocodeServer"
-    GEOMETRY_ANALYTICS = "GeometryAnalytics"
-    GEOMETRY_SERVICE = "GeometryService"
-    GEOMETRY_TOOLS = "GeometryTools"
-    GEOMETRY_TOOLS_ADMIN = "GeometryToolsAdmin"
-    GEOMETRY_TOOLS_ANALYTICS = "GeometryToolsAnalytics"
-    GEOMETRY_TOOLS_GEOCODING = "GeometryToolsGeocoding"
-    GEOMETRY_TOOLS_GEODATA_ACCESS = "GeometryToolsGeodataAccess"
-    GEOMETRY_TOOLS_GEOMETRY_ANALYTICS = "GeometryToolsGeometryAnalytics"
-    GEOMETRY_TOOLS_GEOMETRY_SERVICE = "GeometryToolsGeometryService"
-    GEOMETRY_TOOLS_GEOMETRY_TOOLS = "GeometryToolsGeometryTools"
-    GEOMETRY_TOOLS_GEOMETRY_TOOLS_ADMIN = "GeometryToolsGeometryToolsAdmin"
+    GEODATA_SERVER = "GeodataServer"
 
 
 class ArcLayerType(str, Enum):

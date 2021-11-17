@@ -1,0 +1,125 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/95.0.4638.69 Safari/537.36
+    method: GET
+    uri: https://sampleserver6.arcgisonline.com/arcgis/rest/services?f=json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAJ1W30/bMBD+X/JcTc32gOAtTWlBKtDhAtomFBnnSG84drAdUIT433eGsoniNB5P
+        BPf7cb5cPvspEa0xoNwlGItaJQfp+MteOkputSxpKTn4lWTzZTJKDiU8cOch9KzAVB09LLTgcq4f
+        wKiaRDYrThNxlJyCe9TmLlNcdhb9ytmNxPsW/JPVC65KK7H0/zKBRMdbFFPuuF9ovNcK6kYbLrOq
+        MlC9uTPS70544xVZpwT9uXAo0SHY5HqUWDAPKMDX/pQoXkNykOynac6ltEfa2Ub7Ql3X+B/mS0Zw
+        MMnzaBhMph/ROSjb2iHQmhupnYNFxv5Bj2teQQCs6xqMQC6n3CMya8HaTYM31Blw15pPksMlErFV
+        6LqsLA1RUFWRdr2soM8n9vSfO9mGM8cdLCVX8AmvEDnoesiNW9+3/A5swVAJSPf3xhGGA7ywF73i
+        CpToZly8TX6E0y5W0Gc+nWyCwe7+ZI4oRVBQk4YUT7wxN11EuR+hYUWtXKVpa933lloJZrAEN+Gy
+        7IoJt0CAIXQrHU6RRsG3gcuC8bqRQ8NwyhufQlICW4N8X1TvhneRwi6LfOpjNPcJ/HU8Tgej5VS7
+        qFHZwoXdf6yoLbYgdyzT/ZzaaYsLlutWRYzWGUrmT4Cl0b9BuAmxSm7iBjmCG/RcrrWCYyXo0FEu
+        xqiPEFbXWi7B1BgnHUKHdQ0IbOhT2Jx/u7DnIAxsAXtLCIF7VEvp+/03QC5hjUJGvasIbtgTacFm
+        Suntjfdb9VKCDq8f8pU2ssxjwpC93ivOga4wNubY6iOE1Wff0jRG9D0uqLXShkJRD6bBBcsGlCj9
+        HeW6XKCKets9+LA2wqNdQ7n7ZLmi49cUm7vkS2YXw6H9jhRRdg8+rI2yvEUTc5f4CO1RVOWqNTcR
+        PXuZ1oI5A+Bi+uDhPqV/6j7t6+c/XTGDJgQMAAA=
+    headers:
+      Cache-Control:
+      - max-age=0,must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '713'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 17 Nov 2021 12:42:23 GMT
+      Server:
+      - ''
+      Set-Cookie:
+      - AWSALB=KDZ53FyPlN0lDW9o3xL+vyao6PJJiAmV5zoNYwsojwxs4mDW974fOJ0rZstw2LV+KvM7ku5PCALMcdHK+qp9gxc0YJaWqQvG28Z8z2fgryAhLluD7g2gYKDXWTT+;
+        Expires=Wed, 24 Nov 2021 12:42:23 GMT; Path=/
+      - AWSALBCORS=KDZ53FyPlN0lDW9o3xL+vyao6PJJiAmV5zoNYwsojwxs4mDW974fOJ0rZstw2LV+KvM7ku5PCALMcdHK+qp9gxc0YJaWqQvG28Z8z2fgryAhLluD7g2gYKDXWTT+;
+        Expires=Wed, 24 Nov 2021 12:42:23 GMT; Path=/; SameSite=None; Secure
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/95.0.4638.69 Safari/537.36
+    method: GET
+    uri: https://sampleserver6.arcgisonline.com/arcgis/rest/services/ServiceRequest/FeatureServer?f=json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAL1Va2/bNhT9K4I+q4Lej3zzbCfL1nRd4qVAiyCgpWubG0VqfCQWAv/3XdKykzgt
+        MBTrAAMWeV/nkOdePvmNkRK4vgWpqOD+WRyFZRz4CuQDbWAGqpG0187kLzZUefjTG/A60ntGQetp
+        4TWCMWi0xwV/Bx3INfBm8CT8bUBp5a2E9MZ83kqKzsWjD0jCvN4sGW1CP/A3RI0ooJ0RTfyzFWEK
+        nGEimw19ONlXpu+F1GpGVSM4RwTQzluqKV+/8fndgBxs9JwhQq6Vf6aleeFwDYxYmmpDe1woYWQD
+        R6eBN3NOlgza08zQutTnQnbEZvV/ufntA7LpyPYaGiHbqTBc23ONotPdc9JoIdEW+A3pyZIyBA82
+        icsZTCUQDcEffWv/ZsDArZggrQoOTAO//R8vqRH9IOl6oxewRVb+XEkaBpfcGVWPR0jYNawANWWP
+        78l//Iu2ln0SW/54xljtk9tLq7zcBT7l1AbNtxrsOT35244ij3d1FWdRHYdJHtdZFcdp4A/OksdJ
+        GZd1mBZ5HSV5HWAE2e4jkqrMwrgo4ioqotpGWAtGVEVah1VRVUma1/l3QUWsK8PeAo3DrMoQR1mn
+        KcbGeTEvD1jRWNdFluVJkpVFlSAnaxwBZ4imyvKwyJMozaI8PwCui6IuoiwskzyqkzjNvhcwYUw8
+        XoDoQMthr6Oj8p1tgZ9TIx9AHa2jvgVnw+SVy+jx03DcmTL6tV6a9D0brD7VJ6o3F0wsCbts1Zum
+        POY5JDCoBSt/QFVdodilsvIWjbEte8lXwrJeUM0wwr8Z1Xq9l7B3RXr0nhi9sT31WplT0Y1d/4P7
+        48Ys/8QsP7zOFG9iLeSAhXD1KwyPOFQsvfeiQccL8QCSW8rBFGeaptrgtzfna7J288/fnc5G0RHK
+        j1fJyGBP/+zLk2/1hPLipPvKqdsL6ol9Qd7biMvWat6OpBUxTN9SRd1UG54lshwdMTnHdsKZSPkN
+        YgZXBeX/vNBDb0ue4xQ0EjwXiPXWo54Xe7MVy0HiHwW13O4w1k7rZwLxKYER/ygMFyJfPgHfpj5G
+        /kzUt1OBeyw+z/bH8Kx813P7PrKtIYy+uiXMvGg7NJluIQlXK/ekWDwOC7I+bu93Du1fRVH8uv3j
+        JMMdfXDHx+mRyPZwByOdD5PZfVwn5f1C3O+/q9R+TPH92t3tgv+m5Ejr39W82/0DgnkGQJEIAAA=
+    headers:
+      Cache-Control:
+      - max-age=0,must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '911'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 17 Nov 2021 12:42:24 GMT
+      ETag:
+      - 83eecb97
+      Server:
+      - ''
+      Set-Cookie:
+      - AWSALB=livluLFNH07m7HTtvc7xmVxjqHNXfq0czRRdXtamYncCulogJ0ggv+zCCZKXAZgJwKBlMBtwR0huT6WA0rQsAraa3lu20MoJSToiW2K6szeYX+6GYJw4DFypMNUw;
+        Expires=Wed, 24 Nov 2021 12:42:24 GMT; Path=/
+      - AWSALBCORS=livluLFNH07m7HTtvc7xmVxjqHNXfq0czRRdXtamYncCulogJ0ggv+zCCZKXAZgJwKBlMBtwR0huT6WA0rQsAraa3lu20MoJSToiW2K6szeYX+6GYJw4DFypMNUw;
+        Expires=Wed, 24 Nov 2021 12:42:24 GMT; Path=/; SameSite=None; Secure
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1
