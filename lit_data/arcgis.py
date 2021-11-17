@@ -341,7 +341,7 @@ class ArcData:
             with open(filename, "w") as f:
                 json.dump(self.features, f, indent=indent)
         else:
-            return json.dumps(self.features)
+            return json.dumps(self.features, indent=indent)
 
     def csv(self, filename: str = None):
         if filename:

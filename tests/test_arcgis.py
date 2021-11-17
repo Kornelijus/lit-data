@@ -1,13 +1,19 @@
-from lit_data.arcgis import ArcFolder, ArcServer, ArcService, ArcServiceType, ArcTable
+from lit_data.arcgis import ArcData, ArcFolder, ArcServer, ArcService, ArcServiceType, ArcTable
 import pytest
 
 # TODO: Implement tests for the ArcGIS API util classes.
 
 
-@pytest.fixture(scope="function")  # https://github.com/kiwicom/pytest-recording/issues/76
+@pytest.fixture(scope="module")  # https://github.com/kiwicom/pytest-recording/issues/76
 @pytest.mark.vcr
 def server():
     return ArcServer("https://sampleserver6.arcgisonline.com/arcgis/rest/services")
+
+
+@pytest.fixture(scope="module")
+@pytest.mark.vcr
+def service(server):
+    return server.services("ServiceRequest", ArcServiceType.FEATURE_SERVER)
 
 
 @pytest.mark.vcr
@@ -34,8 +40,7 @@ def test_server_services(server):
 
 
 @pytest.mark.vcr
-def test_service_tables(server):
-    service = server.services("ServiceRequest", ArcServiceType.FEATURE_SERVER)
+def test_service_tables(service):
     tables = service.tables()
     print(service._tables)
     table_by_name = service.tables(1)
@@ -43,6 +48,18 @@ def test_service_tables(server):
     assert len(tables) == 1
     assert tables[1] is table_by_name
     assert type(table_by_name) is ArcTable
+
+
+@pytest.mark.vcr
+def test_table_query(service):
+    table = service.tables(1)
+    fields = table.fields()
+    data = table.query(record_count=5)
+
+    assert type(data) == ArcData
+    assert len(fields) == 6
+    assert len(data.csv().split("\n")) == 6
+    assert len(data.json().split("\n")) == 34
 
 
 @pytest.mark.vcr
