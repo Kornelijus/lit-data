@@ -22,6 +22,7 @@ black = "^21.9b0"
 flake8 = "^3.9.2"
 pre-commit = "^2.15.0"
 pytest-recording = "^0.12.0"
+pytest-cov = "^3.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -37,4 +38,4 @@ include = '\.pyi?$'
 max-line-length = 120
 
 [tool.pytest.ini_options]
-addopts = ["--record-mode", "once"]
+addopts = ["--record-mode", "new_episodes", "--cov", "lit_data"]

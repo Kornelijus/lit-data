@@ -133,3 +133,6 @@ dmypy.json
 
 # IntelliJ IDEA config
 .idea/
+
+# pytest coverage
+.coverage
