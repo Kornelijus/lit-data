@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"name": "lit-data library",
+			"path": "../lit-data"
+		},
+		{
+			"name": "lit-data api",
+			"path": "../lit-data-api"
+		},
+		{
+			"name": "research notebooks",
+			"path": "../notes"
+		},
+		{
+			"name": "root dir",
+			"path": "../"
+		}
+	],
+	"settings": {
+		"[json][jsonc]": {
+			"editor.detectIndentation": false,
+			"editor.tabSize": 2,
+		},
+
+		"[python]": {
+			"editor.detectIndentation": false,
+			"editor.tabSize": 2,
+		},
+
+		"files.exclude": {
+			"**/__pycache__": true,
+			"**/.pytest_cache": true,
+			"**/.coverage": true
+		},
+	}
+}
